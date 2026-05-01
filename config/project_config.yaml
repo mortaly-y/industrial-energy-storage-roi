@@ -1,5 +1,5 @@
 project:
-  name: "某制造企业 500kW/1MWh 工商业储能收益测算项目"
+  name: "某制造企业工商业储能收益测算与方案对比项目"
   customer_type: "制造企业"
   scenario: "用户侧工商业储能"
   connection_type: "低压侧并网"
@@ -20,3 +20,41 @@ strategy:
   charge_price_type: "valley"
   discharge_price_type: "peak"
   anti_reverse_power: true
+
+capacity_scenarios:
+  - name: "A_250kW_500kWh"
+    power_kw: 250
+    capacity_kwh: 500
+    investment_cost_per_wh: 1.10
+
+  - name: "B_500kW_1000kWh"
+    power_kw: 500
+    capacity_kwh: 1000
+    investment_cost_per_wh: 1.10
+
+  - name: "C_750kW_1500kWh"
+    power_kw: 750
+    capacity_kwh: 1500
+    investment_cost_per_wh: 1.05
+
+  - name: "D_1000kW_2000kWh"
+    power_kw: 1000
+    capacity_kwh: 2000
+    investment_cost_per_wh: 1.00
+
+sensitivity:
+  investment_cost_per_wh:
+    - 0.80
+    - 1.00
+    - 1.10
+    - 1.20
+
+  peak_price:
+    - 0.90
+    - 1.10
+    - 1.30
+
+  valley_price:
+    - 0.25
+    - 0.35
+    - 0.45
